@@ -3,7 +3,7 @@
 # 数组
 在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？
 
-![数组的结构示意图](https://github.com/LtLei/articles/blob/master/java/collection/image/img_1_1.png)
+<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_1_1.png"/>
 
 正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：
 
@@ -21,7 +21,7 @@
 
 # 链表
 链表是一种离散存储结构，其在内存中存储不是连续的，每个数据元素都通过一个指针指向其下一个元素的地址。根据指针域的不同，链表又分为单链表、双向链表、循环链表等，这里我们只分析单链表。示意图如下所示：
-![链表的结构示意图](https://github.com/LtLei/articles/blob/master/java/collection/image/img_1_2.png)
+<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_1_2.png"/>
 
 分析这种结构，我们可以得出以下几个结论：
     

@@ -4,7 +4,7 @@ Java集合是我们使用最频繁的工具，也是面试的热点，但我们�
 
 许多人对集合类的理解是暴力的，当需要保存对象时就使用`ArrayList`，当需要保存键值对时就使用`HashMap`，当需要不可重复时就使用`HashSet`，等等。而且使用方式也比较单一：
 
-```
+```java
 List<String> list = new ArrayList<>();
 
 Map<String, String> map = new HashMap<>();
