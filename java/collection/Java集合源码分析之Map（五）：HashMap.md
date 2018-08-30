@@ -123,7 +123,7 @@ static final int tableSizeFor(int cap) {
 
 如果你是跟随我文章的顺序读到这里，有没有感觉十分熟悉？这就是找到距离`cap`参数最近的2的次幂呀。没有读过也没有关系，这里奉上链接，里面有非常详细的解析。
 
-[Java集合源码分析之Queue（三）：ArrayDeque](https://www.jianshu.com/p/1c1c3f24762e)
+[Java集合源码分析之Queue（三）：ArrayDeque](https://github.com/LtLei/articles/blob/master/java/collection/Java%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8BQueue%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AArrayDeque.md)
 
 # 重要方法
 
@@ -591,7 +591,7 @@ final TreeNode<K,V> putTreeVal(HashMap<K,V> map, Node<K,V>[] tab,
 
 # 相关文章
 
-
+[Java集合源码分析之Map（四）：TreeMap](https://github.com/LtLei/articles/blob/master/java/collection/Java%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8BMap%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9ATreeMap.md)
 
 ---
 
