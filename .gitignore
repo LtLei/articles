@@ -1,2 +1,2 @@
-**/.vscode/
-**/*.class
+**/.vscode/*
+*.class
