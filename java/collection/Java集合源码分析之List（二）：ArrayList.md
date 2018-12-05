@@ -6,7 +6,7 @@
 
 # ArrayList继承结构
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_7_1.png"/>
+<div align="center"><img src ="/image/img_7_1.png" /><br/>ArrayList结构图</div>
 
 可以看到，`ArrayList`是`AbstractList`的子类，同时实现了`List`接口。除此之外，它还实现了三个标识型接口，这几个接口都没有任何方法，仅作为标识表示实现类具备某项功能。`RandomAccess`表示实现类支持快速随机访问，`Cloneable`表示实现类支持克隆，具体表现为重写了`clone`方法，`java.io.Serializable`则表示支持序列化，如果需要对此过程自定义，可以重写`writeObject`与`readObject`方法。
 
@@ -83,6 +83,7 @@ public ArrayList(Collection<? extends E> c) {
 ```
 
 # 重要方法
+
 `ArrayList`已经是一个具体的实现类了，所以在`List`接口中定义的所有方法在此都做了实现。其中有些在`AbstractList`中实现过的方法，在这里再次被重写，我们稍后就可以看到它们的区别。
 
 先看一些简单的方法：
@@ -175,6 +176,7 @@ public void add(int index, E element) {
     size++;
 }
 ```
+
 以上两种添加数据的方式都调用到了`ensureCapacityInternal`这个方法，我们看看它是如何完成工作的：
 
 ```
@@ -296,6 +298,7 @@ private void writeObject(java.io.ObjectOutputStream s)
     }
 }
 ```
+
 `readObject`是一个相反的过程，就是把数据正确的恢复回来，并将`elementData`设置好即可，感兴趣可以自行阅读源码。
 
 # 总结
@@ -313,7 +316,7 @@ private void writeObject(java.io.ObjectOutputStream s)
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

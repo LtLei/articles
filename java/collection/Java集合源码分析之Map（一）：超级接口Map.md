@@ -1,6 +1,7 @@
 数组与链表在处理数据时各有优缺点，数组查询速度很快而插入很慢，链表在插入时表现优秀但查询无力。哈希表则整合了数组与链表的优点，能在插入和查找等方面都有不错的速度。我们之后要分析的`HashMap`就是基于哈希表实现的，不过在JDK1.8中还引入了**红黑树**，其性能进一步提升了。本文主要分析JDK中关于`Map`的定义。
 
 ## 接口Map
+
 Map的定义为：
 
 > An object that maps keys to values.  A map cannot contain duplicate keys; each key can map to at most one value.
@@ -10,6 +11,7 @@ Map的定义为：
 在分析其定义的方法前，我们要先了解一下`Map.Entry`这个接口。
 
 # 接口Map.Entry
+
 存储在Map中的数据需要实现此接口，主要提供对key和value的操作，也是我们使用最多的操作。我们先分析它：
 
 ```
@@ -199,7 +201,7 @@ public Set<K> keySet() {
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

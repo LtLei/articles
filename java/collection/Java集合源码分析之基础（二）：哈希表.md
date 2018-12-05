@@ -12,9 +12,9 @@ Hash函数，实际上是建立起key值与int值映射关系的函数。这就�
 
 可以发现，数组与哈希表的操作不同之处主要在于，前者是直接插入，后者需要通过Hash函数计算后再插入。可以通过下图对比来理解：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_2_1.png"/>
+<div align="center"><img src ="/image/img_2_1.png" /><br/>数组的插入</div>
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_2_2.png"/>
+<div align="center"><img src ="/image/img_2_2.png" /><br/>哈希表的插入</div>
 
 哈希表完全继承了数组的优点，又显著的提高了查询的速度，通过Hash函数使得查询速度达到了**O(1)**。既然有了哈希表，它这么优秀，为何还需要数组的存在呢？那是因为Hash表是有缺陷的，这个缺陷就是**哈希碰撞**。
 
@@ -26,7 +26,7 @@ Hash函数所做的事，就是无论什么对象，都根据一个规则映射�
 
 要解决哈希碰撞，我们可以想到多种解决方案。例如使用二维数组，将碰撞的元素按顺序存储起来，类似下图：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_2_3.png"/>
+<div align="center"><img src ="/image/img_2_3.png" /><br/>二维数组存储</div>
 
 这样的方式有一个很大的诟病，因为数组大小是固定的，所以第二维的数组长度都是一样的，但是哈希碰撞一定是比较少发生的情况，也就是我们声明了一个很大的数组，但是其中大部分都是闲置的，这就浪费了大量的内存。
 
@@ -34,7 +34,7 @@ Hash函数所做的事，就是无论什么对象，都根据一个规则映射�
 
 目前比较通用的方法，就是使用数组+链表组合的方式。当出现哈希碰撞时，在该位置的数据就通过链表的方式链接起来，如下图所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_2_4.png"/>
+<div align="center"><img src ="/image/img_2_4.png" /><br/>哈希表的结构示意图</div>
 
 这是当前比较理想的方法，既继承了数组的优点，又在碰撞时继承了链表的优点，这也是哈希表强大的地方之一。
 
@@ -44,11 +44,13 @@ Hash函数所做的事，就是无论什么对象，都根据一个规则映射�
 
 哈希表是一种优化存储的思想，具体存储元素的依然是其他的数据结构。设计良好的哈希表，能同时兼备数组和链表的优点，它能在插入和查找时都具备良好的性能。然而设计不好的哈希表，有可能会出现较多的哈希碰撞，导致链表过长，从而哈希表会更像一个链表。还有当数据量很大时，为防止链表过长，就需要对数组进行扩容，这时就涉及到了数组的拷贝，其对性能的影响也很严重，所以需要提前对可能的情况有良好的预测，才能真正发挥哈希表的优势。
 
+---
+
 本文到此就结束了，如果您喜欢我的文章，可以关注我的微信公众号： **大大纸飞机** 
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

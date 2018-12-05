@@ -1,10 +1,10 @@
 `数组`和`链表`是数据结构中最基本的部分，也是其余众多数据结构的基础。即使在Java中，这两种结构使用的也很普遍。这里我们会先对它们进行简要分析。
 
 # 数组
+
 在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？
 
-<img 
-src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_1_1.png"/>
+<div align="center"><img src ="image/img_1_1.png" /><br/>数组的结构示意图</div>
 
 正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：
 
@@ -21,9 +21,10 @@ src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_1_1
 总结起来就是：数组大小固定，查找迅速，增删复杂，需要完整的内存块，容易产生碎片。
 
 # 链表
+
 链表是一种离散存储结构，其在内存中存储不是连续的，每个数据元素都通过一个指针指向其下一个元素的地址。根据指针域的不同，链表又分为单链表、双向链表、循环链表等，这里我们只分析单链表。示意图如下所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_1_2.png"/>
+<div align="center"><img src ="image/img_1_2.png" /><br/>链表的结构示意图</div>
 
 分析这种结构，我们可以得出以下几个结论：
     
@@ -54,7 +55,7 @@ src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_1_1
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

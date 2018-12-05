@@ -1,2 +1,5 @@
 **/.vscode/*
 *.class
+**/_book/*
+SUMMARY.md
+run.bat

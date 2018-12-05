@@ -10,7 +10,7 @@
 
 `HashMap`的结构如下所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_1.png"/>
+<div align="center"><img src ="/image/img_11_1.png" /><br/>HashMap结构图</div>
 
 # 构造函数与成员变量
 
@@ -123,7 +123,7 @@ static final int tableSizeFor(int cap) {
 
 如果你是跟随我文章的顺序读到这里，有没有感觉十分熟悉？这就是找到距离`cap`参数最近的2的次幂呀。没有读过也没有关系，这里奉上链接，里面有非常详细的解析。
 
-[Java集合源码分析之Queue（三）：ArrayDeque](https://github.com/LtLei/articles/blob/master/java/collection/Java%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8BQueue%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AArrayDeque.md)
+[Java集合源码分析之Queue（三）：ArrayDeque](Java集合源码分析之Queue（三）：ArrayDeque.md)
 
 # 重要方法
 
@@ -136,6 +136,7 @@ public V put(K key, V value) {
     return putVal(hash(key), key, value, false, true);
 }
 ```
+
 这里我们先关注下`hash`函数，在HashMap中其实现如下：
 
 ```
@@ -144,6 +145,7 @@ static final int hash(Object key) {
     return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
 }
 ```
+
 这里用到的方法很简单，就是把key与其高16位异或。文档中有如下说明：
 > There is a tradeoff between speed, utility, and quality of bit-spreading.
 
@@ -250,6 +252,7 @@ final void treeifyBin(Node<K,V>[] tab, int hash) {
     }
 }
 ```
+
 无论是在`put`还是`treeify`时，都依赖于`resize`，它的重要性不言而喻。它不仅可以调整大小，还能调整树化和反树化（从树变为链表）所带来的影响。我们看看它具体做了哪些工作：
 
 ```
@@ -352,6 +355,7 @@ public V remove(Object key) {
         null : e.value;
 }
 ```
+
 和插入一样，其实际的操作在`removeNode`方法中完成，我们看下其实现：
 
 ```
@@ -537,45 +541,45 @@ final TreeNode<K,V> putTreeVal(HashMap<K,V> map, Node<K,V>[] tab,
 
 图中左侧是hash算法完成后的hash值，中间是插入的内容，有的位置还没有数据，有的位置已经插入了一些数据并变为了链表，并且我们假设capacity已经大于64（64是可以树化的阈值）。如下图所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_2.png"/>
+<div align="center"><img src ="/image/img_11_2.png" /><br/>初始状态</div>
 
 为了完整的演示，现在我们向表中插入一个hash=6的值。由于6的位置现在是空的，所以元素会直接放在此处：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_3.png"/>
+<div align="center"><img src ="/image/img_11_3.png" /><br/>插入一个元素</div>
 
 我们继续插入一个hash=6的值，此时，6的位置已经存在一个元素，所以新的元素会通过链表的方式链接在18的后边，如下所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_4.png"/>
+<div align="center"><img src ="/image/img_11_4.png" /><br/>链接一个元素</div>
 
 现在，我们再插入几个hash=6的值，直到达到链表变为红黑树的阈值（默认是8个）：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_5.png"/>
+<div align="center"><img src ="/image/img_11_5.png" /><br/>树化临界点</div>
 
 此时，在6的位置上有了8个元素。这时，我们要向其中加入一个9，就需要进行树化，用红黑树代替链表以提升查询性能。
 
 树化时，先获取第一个元素18，将其转为`TreeNode`节点，并设置为head。然后把后续节点依次转为`TreeNode`，并依次挂在head之后，他们的**prev**指向前一个元素，**next**指向后一个元素。挂完之后类似下图：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_6.png"/>
+<div align="center"><img src ="/image/img_11_6.png" /><br/>转为树节点</div>
 
 转为树节点之后，需要通过head，也就是这里的18，来进一步调整。首先，18就是root节点，颜色设置为黑色。然后比较18与20，它们的hash都一样，所以会采用`Comparable`比较。这时20应该在18的右边。然后按照`balanceInsertion`方法此时不需要调整，所以18依然是root，且依然在table表的首位，结果如下：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_7.png"/>
+<div align="center"><img src ="/image/img_11_7.png" /><br/>调整20</div>
 
 然后再调整31，31在18的右侧，结果如下：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_8.png"/>
+<div align="center"><img src ="/image/img_11_8.png" /><br/>调整31</div>
 
 这时候就破坏了红黑树了，按照在`TreeMap`中介绍的方法，需要进行调整，这里不再展示过程，而直接展示结果了：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_9.png"/>
+<div align="center"><img src ="/image/img_11_9.png" /><br/>调整31</div>
 
 如果仅是一棵红黑树，到此调整就完毕了，但是这棵红黑树需要在table表中，所以其根节点必须在首位。我们看到，加入31以后，根节点由18变为了20，所以就需要按照`moveRootToFront`方法将root节点提前。这一操作并不会改变树的结构，仅仅是把新的root和原来的root在table表中的位置交换了一下，如下所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_10.png"/>
+<div align="center"><img src ="/image/img_11_10.png" /><br/>调整root位置</div>
 
 然后按照这样的规则继续调整剩下的元素，这些步骤和上述类似，最终调整结果如下：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_11_11.png"/>
+<div align="center"><img src ="/image/img_11_11.png" /><br/>最终结果</div>
 
 # 总结
 
@@ -591,7 +595,7 @@ final TreeNode<K,V> putTreeVal(HashMap<K,V> map, Node<K,V>[] tab,
 
 # 相关文章
 
-[Java集合源码分析之Map（四）：TreeMap](https://github.com/LtLei/articles/blob/master/java/collection/Java%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8BMap%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9ATreeMap.md)
+[Java集合源码分析之Map（四）：TreeMap](Java集合源码分析之Map（四）：TreeMap.md)
 
 ---
 
@@ -599,7 +603,7 @@ final TreeNode<K,V> putTreeVal(HashMap<K,V> map, Node<K,V>[] tab,
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

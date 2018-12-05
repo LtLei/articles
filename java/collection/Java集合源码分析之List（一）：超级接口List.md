@@ -4,7 +4,9 @@
 > Unlike sets, lists typically allow duplicate elements.  More formally, lists typically allow pairs of elements <tt>e1</tt> and **e2** such that **e1.equals(e2)**, and they typically allow multiple null elements if they allow null elements at all.  It is not inconceivable that someone might wish to implement a list that prohibits duplicates, by throwing runtime exceptions when the user attempts to insert them, but we expect this usage to be rare.
 
 # List特有方法
+
 我们关注其不同于Collection的方法，主要有以下这些：
+
 ```
 //在指定位置，将指定的集合插入到当前的集合中
 boolean addAll(int index, Collection<? extends E> c);
@@ -159,6 +161,7 @@ protected void removeRange(int fromIndex, int toIndex) {
 我们先看看`SubList`相关的内容。`SubList`并不是新建了一个集合，只是持有了当前集合的引用，然后控制一下用户可以操作的范围，所以在接口定义时就说明了其更改会直接反应到原集合中。`SubList`定义在`AbstractList`内部，并且是`AbstractList`的子类。在`AbstractList`的基础上增加了对可选范围的控制。
 
 `equals`和`hashcode`的实现，也关乎我们的使用。在`AbstractList`中，这两个方法不仅与其实例有关，也和其内部包含的元素有关，所以在定义数据元素时，也应该复写这两个方法，以保证程序的正确运行。这里看下其源码加深一下印象吧。
+
 ```
 public boolean equals(Object o) {
     if (o == this)
@@ -195,7 +198,7 @@ public int hashCode() {
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

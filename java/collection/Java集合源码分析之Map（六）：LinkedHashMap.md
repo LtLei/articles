@@ -24,6 +24,7 @@ static class Entry<K,V> extends HashMap.Node<K,V> {
     }
 }
 ```
+
 这个`Entry`在`HashMap`中被引用过，主要是为了能让`LinkedHashMap`也支持树化。在这里则是用来存储元素。
 
 ```
@@ -121,6 +122,7 @@ private void transferLinks(LinkedHashMap.Entry<K,V> src,
         a.before = dst;
 }
 ```
+
 最后我们看下`afterNodeInsertion`做了哪些事情吧：
 
 ```
@@ -143,6 +145,7 @@ protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
     return false;
 }
 ```
+
 ## 查询
 
 因为要支持访问顺序，所以获取元素的方法和`HashMap`也有所不同。下面我们看下其实现：
@@ -203,7 +206,7 @@ void afterNodeAccess(Node<K,V> e) { // move node to last
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

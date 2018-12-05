@@ -1,6 +1,6 @@
-`TreeMap`是**红黑树**的java实现，对红黑树不太了解的可以查阅这篇文章[Java集合源码分析之基础（六）：红黑树（RB Tree）](https://github.com/LtLei/articles/blob/master/java/collection/Java%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8B%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%88RB%20Tree%EF%BC%89.md)。**红黑树**能保证增、删、查等基本操作的时间复杂度为**O(lgN)**。本文将对`TreeMap`的源码进行分析。
+`TreeMap`是**红黑树**的java实现，对红黑树不太了解的可以查阅这篇文章[Java集合源码分析之基础（六）：红黑树（RB Tree）](Java集合源码分析之基础（六）：红黑树（RB Tree）.md)。**红黑树**能保证增、删、查等基本操作的时间复杂度为**O(lgN)**。本文将对`TreeMap`的源码进行分析。
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_1.png"/>
+<div align="center"><img src ="/image/img_10_1.png" /><br/>TreeMap结构图</div>
 
 # Entry定义
 
@@ -256,17 +256,17 @@ private void rotateRight(Entry<K,V> p) {
 
 现有一棵简单的红黑树：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_2.png"/>
+<div align="center"><img src ="/image/img_10_2.png" /><br/>红黑树</div>
 
 然后我们希望把一个值为7的元素插入进去。按照`put`方法，先把7和根节点14比较，发现7<14，就向左遍历。到6时，发现7>6，于是再和8比较，发现8是一个叶节点，所以把7插入到8的左儿子处，如下图所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_3.png"/>
+<div align="center"><img src ="/image/img_10_3.png" /><br/>插入一个元素</div>
 
 为了不增加黑高，这里把7设置为红色。现在，这棵树已经不再是红黑树了，因为其违反了规则`如果一个节点是红色的，则它的两个儿子都是黑色的`。我们按照`fixAfterInsertion`的方式对其进行调整，`fixAfterInsertion`中的参数x就是这里的7。
 
 首先，进入循环后发现7的父亲是右节点，进入else判断，7的叔叔4是红色的，于是把4和8染为黑色，6染为红色，把x参数指向6，并进入下一次循环。如下所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_4.png"/>
+<div align="center"><img src ="/image/img_10_4.png" /><br/>初步调整</div>
 
 此时x是6，其父亲10是左儿子，其叔叔18是黑色的，此时代码就会走到这里：
 
@@ -281,39 +281,39 @@ if (x == rightOf(parentOf(x))) {
 ```
 此时，就需要把10和14的颜色更换，如下图所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_5.png"/>
+<div align="center"><img src ="/image/img_10_5.png" /><br/>10与14改变颜色</div>
 
 然后以14为基础右旋，涉及到的元素有10、12和14，如下所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_6.png"/>
+<div align="center"><img src ="/image/img_10_6.png" /><br/>右旋涉及元素</div>
 
 具体操作为，把10的右儿子12，变为14的左儿子，然后把14变为10的右儿子，结果如下：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_7.png"/>
+<div align="center"><img src ="/image/img_10_7.png" /><br/>右旋</div>
 
 此时循环条件不再满足，也就是调整完毕，可以看到，依然是一棵正确的红黑树。
 
 这只是需要调整的一种情况，再举一个复杂一些的例子，此时把11插入了红黑树中：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_8.png"/>
+<div align="center"><img src ="/image/img_10_8.png" /><br/>插入11</div>
 
 此时其父亲10是红色，没有叔叔，所以需要先左旋，再右旋。具体操作如下：
 
 1. 以10为基础左旋，涉及元素为10和11。
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_9.png"/>
+<div align="center"><img src ="/image/img_10_9.png" /><br/>左旋</div>
 
 情况就和之前插入7类似了，更改11和12的颜色，然后x指向12：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_10.png"/>
+<div align="center"><img src ="/image/img_10_10.png" /><br/>更改11和12颜色</div>
 
 这时又和刚插入11时类似，以8为基础左旋：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_11.png"/>
+<div align="center"><img src ="/image/img_10_11.png" /><br/>左旋</div>
 
 这里是不是就很熟悉了呢？最后的结果如下所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_12.png"/>
+<div align="center"><img src ="/image/img_10_12.png" /><br/>调整结束</div>
 
 代码的做法和我们之前的分析如出一辙，这里再次演示的原因是加深对理论方法与实际代码间关系的理解。
 
@@ -378,6 +378,7 @@ static <K,V> TreeMap.Entry<K,V> successor(Entry<K,V> t) {
 ```
 
 ## 删除一个元素
+
 从红黑树中删除一个元素，和增加一个元素一样复杂。我们看看java的实现：
 
 ```
@@ -561,7 +562,9 @@ private void buildFromSorted(int size, Iterator<?> it,
                 it, str, defaultVal);
 }
 ```
+
 这里调用了一个`computeRedLevel`的方法，是这里的关键。
+
 ```
 private static int computeRedLevel(int sz) {
     int level = 0;
@@ -640,7 +643,7 @@ private final Entry<K,V> buildFromSorted(int level, int lo, int hi,
 ```
 根据以上方式，我们测试向其中插入10条数据，其结果类似下图：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_10_13.png"/>
+<div align="center"><img src ="/image/img_10_13.png" /><br/>测试</div>
 
 可见，redLevel控制的是红色节点出现的层级，使插入的数据更整齐，方便后续操作。
 
@@ -650,7 +653,7 @@ private final Entry<K,V> buildFromSorted(int level, int lo, int hi,
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

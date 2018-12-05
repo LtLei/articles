@@ -3,6 +3,7 @@
 `Deque`中定义的方法主要分为四部分，第一部分就如`Deque`定义所言，提供两侧插入或删除的方法。第二部分是继承自`Queue`的实现。第三部分表示如果要基于此实现一个`Stack`，需要实现的方法。最后一部分是继承自`Collection`的方法。
 
 # 两侧插入、删除
+
 这里方法和`Queue`定义方式一致，但却是针对两侧插入删除的。
 
 ```
@@ -38,6 +39,7 @@ boolean removeLastOccurrence(Object o);
 ```
 
 # 与Queue对应的方法
+
 因为Queue遵循`FIFO`，所以其方法在`Deque`中对应关系有所改变，结合`Deque`的定义，我们很容易就想到它们的对应关系：
 
 ```
@@ -73,6 +75,7 @@ E pop();
 ```
 
 # 继承于Collection的方法
+
 这里主要关注两个方法。
 
 ```
@@ -91,7 +94,7 @@ Iterator<E> descendingIterator();
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

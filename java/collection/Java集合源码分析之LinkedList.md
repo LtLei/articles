@@ -13,19 +13,21 @@
 ```
 public abstract ListIterator<E> listIterator(int index);
 ```
+
 其他一些方法的实现都利用了这个`listIterator`方法，我们不再一一查看了。下面我们分析`LinkedList`的实现
 
 # LinkedList的结构
 
 `LinkedList`的继承结构如下所示：
 
-<img src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_9_1.png"/>
+<div align="center"><img src ="/image/img_9_1.png" /><br/>LinkedList结构图</div>
 
 可以看到，`LinkedList`也实现了`Cloneable`、`java.io.Serializable`等方法，借鉴于`ArrayList`的经验，我们可以想到它的`Clone`也是浅克隆，在序列化方法也采用了同样的方式，我们就不再赘述了。
 
 # 构造方法与成员变量
 
 ## 数据单元Node
+
 在介绍链表结构时提到过，其数据单元分为数据域和指针域，分别存储数据和指向下一个元素的位置，在java中只要定义一个实体类就可以解决了。
 
 ```
@@ -58,6 +60,7 @@ transient Node<E> last;
 ```
 
 ## 构造函数
+
 因为链表没有长度方面的问题，所以也不会涉及到扩容等问题，其构造函数也十分简洁了。
 
 ```
@@ -69,6 +72,7 @@ public LinkedList(Collection<? extends E> c) {
     addAll(c);
 }
 ```
+
 一个默认的构造函数，什么都没有做，一个是用其他集合初始化，调用了一下`addAll`方法。`addAll`方法我们就不再分析了，它应该是和添加一个元素的方法是一致的。
 
 # 重要方法
@@ -243,7 +247,7 @@ public boolean offerFirst(E e) {
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

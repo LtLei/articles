@@ -16,26 +16,27 @@
 
 如下就是一棵简单的二叉排序树：
 
-<img 
-src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_4_1.png"/>
+<div align="center"><img src ="/image/img_4_1.png" /><br/>二叉排序树示意图</div>
 
 当对这棵树进行中序遍历时，其结果将按照从小到大排序。
 
 # 查询操作
+
 二叉排序树的查找时间复杂度为**O(lg n)**，查找使用二分法。要在上图中找到元素37，只需要四次操作即可。
 
 首先，找到根元素22，37比22大，所以淘汰左子树，再找到35，淘汰左子树，再找到41，进入左子树，得到37。可以看到其速度比挨个对比高了很多。
 
 # 插入操作
+
 二叉排序树的插入操作和查询类似，也需要通过二分法进行查找，找到合适的位置再插入元素，所以其插入速度相比链表较慢。
 
 # 删除操作
+
 从二叉排序树中删除一个元素主要分为三种情况。
 
 例如要从下面这个二叉排序树中删除一个元素：
 
-<img 
-src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_4_2.png"/>
+<div align="center"><img src ="/image/img_4_2.png" /><br/>二叉排序树</div>
 
 1. 删除的元素是叶结点，这时可以直接删除它。比如要删除值为1的元素，删除它对树没有任何影响。
 
@@ -44,20 +45,22 @@ src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_4_2
 3. 删除的元素既有左孩子又有右孩子，这时删除它相对复杂。一种好的方式是找到它的前驱或者后继来代替它。比如要删除元素9，就用6或者13代替它即可。
 
 # 问题
+
 一棵普通的二叉排序树也会出现不平衡问题，如果插入的数据都在树的一侧，就会使得树的深度迅速增大，每次二分查找可以排除的数据很少，从而查询速度严重下降，比如下方这棵树：
 
-<img 
-src="https://github.com/LtLei/articles/blob/master/java/collection/image/img_4_3.png"/>
+<div align="center"><img src ="/image/img_4_3.png" /><br/>不平衡的排序树</div>
 
 要查找值为2的元素，使用二分法和使用链表速度差不多。
 
 为了解决这种问题，就需要在元素插入时即进行修正，后续介绍的AVL树和红黑树就是两种不同的解决方案。
 
+---
+
 本文到此就结束了，如果您喜欢我的文章，可以关注我的微信公众号： **大大纸飞机** 
 
 或者扫描下方二维码直接添加：
 
-<img src ="https://github.com/LtLei/articles/blob/master/qrcode.jpg" />
+<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 
