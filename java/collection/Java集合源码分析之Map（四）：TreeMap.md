@@ -1,4 +1,4 @@
-`TreeMap`是**红黑树**的java实现，对红黑树不太了解的可以查阅这篇文章[Java集合源码分析之基础（六）：红黑树（RB Tree）](./Java集合源码分析之基础（六）：红黑树（RB Tree）.md)。**红黑树**能保证增、删、查等基本操作的时间复杂度为**O(lgN)**。本文将对`TreeMap`的源码进行分析。
+`TreeMap`是**红黑树**的java实现，对红黑树不太了解的可以查阅这篇文章 [Java集合源码分析之基础（六）：红黑树（RB Tree）](./Java集合源码分析之基础（六）：红黑树.md)。**红黑树**能保证增、删、查等基本操作的时间复杂度为**O(lgN)**。本文将对`TreeMap`的源码进行分析。
 
 <div align="center"><img src ="./image/img_10_1.png" /><br/>TreeMap结构图</div>
 
