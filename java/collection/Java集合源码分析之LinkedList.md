@@ -20,7 +20,7 @@ public abstract ListIterator<E> listIterator(int index);
 
 `LinkedList`的继承结构如下所示：
 
-<div align="center"><img src ="/image/img_9_1.png" /><br/>LinkedList结构图</div>
+<div align="center"><img src ="./image/img_9_1.png" /><br/>LinkedList结构图</div>
 
 可以看到，`LinkedList`也实现了`Cloneable`、`java.io.Serializable`等方法，借鉴于`ArrayList`的经验，我们可以想到它的`Clone`也是浅克隆，在序列化方法也采用了同样的方式，我们就不再赘述了。
 
@@ -247,7 +247,7 @@ public boolean offerFirst(E e) {
 
 或者扫描下方二维码直接添加：
 
-<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
+<div align="center"><img src ="./image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

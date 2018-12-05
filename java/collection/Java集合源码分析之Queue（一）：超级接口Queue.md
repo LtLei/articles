@@ -73,7 +73,7 @@ public boolean addAll(Collection<? extends E> c) {
 
 或者扫描下方二维码直接添加：
 
-<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
+<div align="center"><img src ="./image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

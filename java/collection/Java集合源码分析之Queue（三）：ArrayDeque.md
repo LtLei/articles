@@ -224,13 +224,13 @@ public void addLast(E e) {
 
 `&`就是按位与，全1才为1。那么任意一个正数和127进行按位与操作后，都只有最右侧7位被保留了下来，其他位全部置0（除符号位），而对一个负数而言，则会把它的符号位置为0，`&`操作后会变成正数。比如-1的值是1111 ... 1111（32个1），和127按位操作后结果就变成了127 。所以，对于正数它就是取模，对于负数，它就是把元素插入了数组的结尾。所以，这个数组并不是向前添加元素就向前扩展，向后添加就向后扩展，它是循环的，类似这样：
 
-<div align="center"><img src ="/image/img_8_1.png" /><br/>循环队列示意图</div>
+<div align="center"><img src ="./image/img_8_1.png" /><br/>循环队列示意图</div>
 
 初始时，head与tail都指向a[0]，这时候数组是空的。当执行`addFirst()`方法时，head指针移动一位，指向a[elements.length-1]，并赋值，也就是给a[elements.length-1]赋值。当执行`addLast()`操作时，先给a[0]赋值，再将tail指针移动一位，指向a[1]。所以执行完之后head指针位置是有值的，而tail位置是没有值的。
 
 随着添加操作执行，数组总会占满，那么怎么判断它满了然后扩容呢？首先，如果head==tail，则说明数组是空的，所以在添加元素时必须保证head与tail不相等。假如现在只有一个位置可以添加元素了，类似下图：
 
-<div align="center"><img src ="/image/img_8_2.png" /><br/>循环队列即将充满示意图</div>
+<div align="center"><img src ="./image/img_8_2.png" /><br/>循环队列即将充满示意图</div>
 
 此时，tail指向了a[8]，head已经填充到a[9]了，只有a[8]是空闲的。很显然，不管是`addFirst`还是`addLast`，再添加一个元素后都会导致head==tail。这时候就不得不扩容了，因为head==tail是判断是否为空的条件。扩容就比较简单了，直接翻倍，我们看代码：
 
@@ -341,7 +341,7 @@ private boolean delete(int i) {
 
 或者扫描下方二维码直接添加：
 
-<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
+<div align="center"><img src ="./image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

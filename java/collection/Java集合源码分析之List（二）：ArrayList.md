@@ -6,7 +6,7 @@
 
 # ArrayList继承结构
 
-<div align="center"><img src ="/image/img_7_1.png" /><br/>ArrayList结构图</div>
+<div align="center"><img src ="./image/img_7_1.png" /><br/>ArrayList结构图</div>
 
 可以看到，`ArrayList`是`AbstractList`的子类，同时实现了`List`接口。除此之外，它还实现了三个标识型接口，这几个接口都没有任何方法，仅作为标识表示实现类具备某项功能。`RandomAccess`表示实现类支持快速随机访问，`Cloneable`表示实现类支持克隆，具体表现为重写了`clone`方法，`java.io.Serializable`则表示支持序列化，如果需要对此过程自定义，可以重写`writeObject`与`readObject`方法。
 
@@ -316,7 +316,7 @@ private void writeObject(java.io.ObjectOutputStream s)
 
 或者扫描下方二维码直接添加：
 
-<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
+<div align="center"><img src ="./image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

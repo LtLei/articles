@@ -6,11 +6,11 @@
 
 如下图就不是一棵AVL树，因为结点18的左子树高度为2，右子树高度为0，高度差大于1。
 
-<div align="center"><img src ="/image/img_5_1.png" /><br/>不平衡</div>
+<div align="center"><img src ="./image/img_5_1.png" /><br/>不平衡</div>
 
 但通过一定的步骤调整之后，可以将其转为一棵平衡二叉树，如下图：
 
-<div align="center"><img src ="/image/img_5_2.png" /><br/>平衡二叉树</div>
+<div align="center"><img src ="./image/img_5_2.png" /><br/>平衡二叉树</div>
 
 # 实现原理
 
@@ -20,75 +20,75 @@
 
 假如我们要将数组`int[] a = {3, 2, 1, 4, 5, 6, 7, 10, 9, 8}`构建成一棵二叉排序树，如果直接按照二叉排序树的定义，会得到下面的结果：
 
-<div align="center"><img src ="/image/img_5_3.png" /><br/>二叉排序树</div>
+<div align="center"><img src ="./image/img_5_3.png" /><br/>二叉排序树</div>
 
 这样的结果对查找是十分不利的，树的高度达到了8，而且大多数只有一个孩子。所以我们需要一些操作，将它变成一棵AVL树。
 
 首先，插入元素3和2时，没有什么影响，此时3的平衡因子为1，2的平衡因子为0，结果如下：
 
-<div align="center"><img src ="/image/img_5_4.png" /><br/>插入3和2</div>
+<div align="center"><img src ="./image/img_5_4.png" /><br/>插入3和2</div>
 
 现在，要把1插入树中，这时结果如下所示：
 
-<div align="center"><img src ="/image/img_5_5.png" /><br/>插入1</div>
+<div align="center"><img src ="./image/img_5_5.png" /><br/>插入1</div>
 
 此时3的平衡因子为2了，不再符合平衡二叉树的规则。此时，整棵树就是最小不平衡子树，我们将其右旋：
 
-<div align="center"><img src ="/image/img_5_6.png" /><br/>右旋</div>
+<div align="center"><img src ="./image/img_5_6.png" /><br/>右旋</div>
 
 再插入4，也不会影响平衡，结果如下：
 
-<div align="center"><img src ="/image/img_5_7.png" /><br/>插入4</div>
+<div align="center"><img src ="./image/img_5_7.png" /><br/>插入4</div>
 
 此时，插入元素5，以3为根结点的子树成为了最小不平衡子树，如下所示：
 
-<div align="center"><img src ="/image/img_5_8.png" /><br/>插入5</div>
+<div align="center"><img src ="./image/img_5_8.png" /><br/>插入5</div>
 
 现在要对其进行左旋：
 
-<div align="center"><img src ="/image/img_5_9.png" /><br/>左旋</div>
+<div align="center"><img src ="./image/img_5_9.png" /><br/>左旋</div>
 
 现在继续插入元素6，此时以2为根结点的右子树为最小不平衡子树，结果如下：
 
-<div align="center"><img src ="/image/img_5_10.png" /><br/>插入6</div>
+<div align="center"><img src ="./image/img_5_10.png" /><br/>插入6</div>
 
 这时再次需要对其进行左旋，这次旋转后要将4的左孩子变为2的右孩子，以满足二叉排序树的定义，如下所示：
 
-<div align="center"><img src ="/image/img_5_11.png" /><br/>左旋</div>
+<div align="center"><img src ="./image/img_5_11.png" /><br/>左旋</div>
 
 再插入7时，情况和之前有些类似了，结果如下：
 
-<div align="center"><img src ="/image/img_5_12.png" /><br/>插入7</div>
+<div align="center"><img src ="./image/img_5_12.png" /><br/>插入7</div>
 
 左旋后结果如下：
 
-<div align="center"><img src ="/image/img_5_13.png" /><br/>左旋</div>
+<div align="center"><img src ="./image/img_5_13.png" /><br/>左旋</div>
 
 现在，继续插入10，此时无需调整，结果如下：
 
-<div align="center"><img src ="/image/img_5_14.png" /><br/>插入10</div>
+<div align="center"><img src ="./image/img_5_14.png" /><br/>插入10</div>
 
 下一步，插入元素9，此时结果如下：
 
-<div align="center"><img src ="/image/img_5_15.png" /><br/>插入9</div>
+<div align="center"><img src ="./image/img_5_15.png" /><br/>插入9</div>
 
 按照之前的经验，这时我们应该进行左旋了，但是左旋之后9将变为10的右孩子，这会不符合二叉排序树的定义。和之前不同的是，7和10的平衡因子符号相反，这是造成这一结果的原因。这种情况下，要先以10为根节点右旋，再进行左旋，结果如下所示：
 
-<div align="center"><img src ="/image/img_5_16.png" /><br/>右旋</div>
+<div align="center"><img src ="./image/img_5_16.png" /><br/>右旋</div>
 
-<div align="center"><img src ="/image/img_5_17.png" /><br/>左旋</div>
+<div align="center"><img src ="./image/img_5_17.png" /><br/>左旋</div>
 
 最后插入元素8，如下所示：
 
-<div align="center"><img src ="/image/img_5_18.png" /><br/>插入8</div>
+<div align="center"><img src ="./image/img_5_18.png" /><br/>插入8</div>
 
 此时情况和上述类似，6是最小不平衡子树的根结点，9和6的平衡因子符号相反，所以先以9为根结点右旋：
 
-<div align="center"><img src ="/image/img_5_19.png" /><br/>右旋</div>
+<div align="center"><img src ="./image/img_5_19.png" /><br/>右旋</div>
 
 然后再以6左旋：
 
-<div align="center"><img src ="/image/img_5_20.png" /><br/>左旋</div>
+<div align="center"><img src ="./image/img_5_20.png" /><br/>左旋</div>
 
 
 可以看到，此树的高度仅为4，与之前的8相差很多，性能自然也好很多。
@@ -103,7 +103,7 @@
 
 或者扫描下方二维码直接添加：
 
-<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
+<div align="center"><img src ="./image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

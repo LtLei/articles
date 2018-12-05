@@ -16,7 +16,7 @@
 
 如下就是一棵简单的二叉排序树：
 
-<div align="center"><img src ="/image/img_4_1.png" /><br/>二叉排序树示意图</div>
+<div align="center"><img src ="./image/img_4_1.png" /><br/>二叉排序树示意图</div>
 
 当对这棵树进行中序遍历时，其结果将按照从小到大排序。
 
@@ -36,7 +36,7 @@
 
 例如要从下面这个二叉排序树中删除一个元素：
 
-<div align="center"><img src ="/image/img_4_2.png" /><br/>二叉排序树</div>
+<div align="center"><img src ="./image/img_4_2.png" /><br/>二叉排序树</div>
 
 1. 删除的元素是叶结点，这时可以直接删除它。比如要删除值为1的元素，删除它对树没有任何影响。
 
@@ -48,7 +48,7 @@
 
 一棵普通的二叉排序树也会出现不平衡问题，如果插入的数据都在树的一侧，就会使得树的深度迅速增大，每次二分查找可以排除的数据很少，从而查询速度严重下降，比如下方这棵树：
 
-<div align="center"><img src ="/image/img_4_3.png" /><br/>不平衡的排序树</div>
+<div align="center"><img src ="./image/img_4_3.png" /><br/>不平衡的排序树</div>
 
 要查找值为2的元素，使用二分法和使用链表速度差不多。
 
@@ -60,7 +60,7 @@
 
 或者扫描下方二维码直接添加：
 
-<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
+<div align="center"><img src ="./image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 

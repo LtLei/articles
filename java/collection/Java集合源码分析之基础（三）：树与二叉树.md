@@ -8,11 +8,11 @@
 
 下图就是一棵树：
 
-<div align="center"><img src ="/image/img_3_1.png" /><br/>树示意图</div>
+<div align="center"><img src ="./image/img_3_1.png" /><br/>树示意图</div>
 
 与现实中的树不同，数据结构里的树的根在最上方，并且只有一个根，就像一棵倒置的树。树的每个结点往下都是一棵子树，且这些子树不能相交，如下所示就不是一棵正确的树：
 
-<div align="center"><img src ="/image/img_3_2.png" /><br/>树的错误示例</div>
+<div align="center"><img src ="./image/img_3_2.png" /><br/>树的错误示例</div>
 
 # 相关概念
 
@@ -22,19 +22,19 @@
 
 如下图所示，A结点为根节点，G、H、I、J、F为叶节点，其余节点则为内部节点，此树的度为3。
 
-<div align="center"><img src ="/image/img_3_3.png" /><br/>度</div>
+<div align="center"><img src ="./image/img_3_3.png" /><br/>度</div>
 
 ## 结点间关系
 
 结点的子树的根称为该结点的**孩子(Child)**，相应地，该结点称为孩子的**双亲(Parent)**。同一个双亲的孩子之间互称**兄弟(Sibling)**。结点的**祖先**是从根到该结点所经分支上的所有结点。反之，以某结点为根的子树中的任一结点都称为该结点的**子孙**。
 
-<div align="center"><img src ="/image/img_3_4.png" /><br/>关系示意图</div>
+<div align="center"><img src ="./image/img_3_4.png" /><br/>关系示意图</div>
 
 ## 深度
 
 结点的**层次(LeveI)**从根开始定义起，根为第一层，根的孩子为第二层。若某结点在第L层，则其子树的根就在第L+1 层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的**深度(Depth)**或**高度** 。
 
-<div align="center"><img src ="/image/img_3_5.png" /><br/>深度示意图</div>
+<div align="center"><img src ="./image/img_3_5.png" /><br/>深度示意图</div>
 
 ## 有序树，无序树
 
@@ -46,7 +46,7 @@
 
 下图就是一个二叉树，二叉树就是每个结点的度≤2的树。
 
-<div align="center"><img src ="/image/img_3_6.png" /><br/>二叉树示意图</div>
+<div align="center"><img src ="./image/img_3_6.png" /><br/>二叉树示意图</div>
 
 二叉树有许多有用的性质，还有一些详细的分类，相关知识大家可以自行查阅资料。
 
@@ -60,7 +60,7 @@
 
 如下图所示，遍历结果为：ABDGHCEIF。
 
-<div align="center"><img src ="/image/img_3_7.png" /><br/>前序遍历</div>
+<div align="center"><img src ="./image/img_3_7.png" /><br/>前序遍历</div>
 
 ## 中序遍历
 
@@ -68,7 +68,7 @@
 
 如下图所示，遍历结果为：GDHBAEICF。
 
-<div align="center"><img src ="/image/img_3_8.png" /><br/>中序遍历</div>
+<div align="center"><img src ="./image/img_3_8.png" /><br/>中序遍历</div>
 
 ## 后序遍历
 
@@ -76,7 +76,7 @@
 
 如下图所示，遍历结果为：GHDBIEFCA。
 
-<div align="center"><img src ="/image/img_3_9.png" /><br/>后序遍历</div>
+<div align="center"><img src ="./image/img_3_9.png" /><br/>后序遍历</div>
 
 ---
 
@@ -84,7 +84,7 @@
 
 或者扫描下方二维码直接添加：
 
-<div align="center"><img src ="/image/qrcode.jpg" /><br/>扫描二维码关注</div>
+<div align="center"><img src ="./image/qrcode.jpg" /><br/>扫描二维码关注</div>
 
 您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
 
