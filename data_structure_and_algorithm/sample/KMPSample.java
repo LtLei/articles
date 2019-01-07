@@ -55,7 +55,7 @@ public class KMPSample{
         int[] next = getNext(target);
 
         while (i<originLen && j<targetLen) {
-            if(j==0 || origin[i] == target[j]){
+            if(j==-1 || origin[i] == target[j]){
                 // 如果相同就一一比较,j=0表示不需要比较
                 i++;
                 j++;
