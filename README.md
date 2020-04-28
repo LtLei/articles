@@ -2,6 +2,16 @@
 
 我知道的编程知识全记录。编程之路，道阻且长。唯，路漫漫其修远兮，吾将上下而求索。
 
+# 《Android》
+
+## 《重学Android应用开发》
+
+[也谈Android应用架构](/android/the_relearning_of_android/也谈Android应用架构.md)
+
+## 《Android杂谈》
+
+[记一次Android逆向之旅（入门向）](./android/记一次Android逆向之旅（入门向）.md)
+
 # 《LeetCode》
 
 [001-两数之和](./leetcode/LeetCode001.md)
@@ -123,3 +133,15 @@
 [Git实用指南第三篇](./git/Git实用指南第三篇.md)
 
 [Git实用指南完结篇](./git/Git实用指南完结篇.md)
+
+---
+
+本文到此就结束了，如果您喜欢我的文章，可以关注我的微信公众号： **大大纸飞机** 
+
+或者扫描下方二维码直接添加：
+
+<div align="center"><img src ="./qrcode.jpg" /><br/>扫描二维码关注</div>
+
+您也可以关注我的简书：https://www.jianshu.com/u/9ee83a8ee52d
+
+编程之路，道阻且长。唯，路漫漫其修远兮，吾将上下而求索。
