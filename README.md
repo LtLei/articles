@@ -8,6 +8,8 @@
 
 [也谈Android应用架构](/android/the_relearning_of_android/也谈Android应用架构.md)
 
+[Jetpack之Lifecycle、LiveData及ViewModel是如何让架构起飞的](/android/the_relearning_of_android/Jetpack之Lifecycle、LiveData及ViewModel是如何让架构起飞的.md)
+
 ## 《Android杂谈》
 
 [记一次Android逆向之旅（入门向）](./android/记一次Android逆向之旅（入门向）.md)
