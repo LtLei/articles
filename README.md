@@ -12,6 +12,8 @@
 
 [WanAndroid——探索Android应用架构的一次实践](/android/the_relearning_of_android/WanAndroid——探索Android应用架构的一次实践.md)
 
+[使用Gson解析data class引发的一点思考](/android/the_relearning_of_android/使用Gson解析data-class引发的一点思考.md)
+
 ## 《Android杂谈》
 
 [记一次Android逆向之旅（入门向）](./android/记一次Android逆向之旅（入门向）.md)
