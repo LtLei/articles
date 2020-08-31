@@ -5,3 +5,4 @@ SUMMARY.md
 run.bat
 book.json
 *.pdf
+.DS_Store
