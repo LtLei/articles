@@ -14,6 +14,8 @@
 
 [使用Gson解析data class引发的一点思考](/android/the_relearning_of_android/使用Gson解析data-class引发的一点思考.md)
 
+[Android上的单元测试与UI测试](/android/the_relearning_of_android/Android上的单元测试与UI测试.md)
+
 ## 《Android杂谈》
 
 [记一次Android逆向之旅（入门向）](./android/记一次Android逆向之旅（入门向）.md)
