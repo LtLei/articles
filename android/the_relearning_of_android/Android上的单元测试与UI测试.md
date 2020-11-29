@@ -4,7 +4,7 @@
 
 单元测试的意义就像它字面上那样，对一个可以运行的最小单元进行测试，保证它的稳定。只要每个最小单元都是正确的，就可以保证上层逻辑的正确性。因此单元测试应该从那些最基础的部分写起，到覆盖核心逻辑为止。而建立在核心逻辑之上的是和用户互动的UI界面，这部分属于UI测试的范畴，但是由于UI变动通常比核心逻辑频繁得多，因此UI测试的意义也就远低于单元测试。
 
-本文以我的 [玩儿Android](https://github.com/LtLei/wanandroid) 项目 **v1.0.2** 版本为例，介绍单元测试常用的 **MockWebServer**、**Mockito**，以及UI测试常用的 **Espresso** 等框架的使用。
+本文以我的 [玩儿Android](https://github.com/LtLei/wanandroid) 项目 **v1.1** 版本为例，介绍单元测试常用的 **MockWebServer**、**Mockito**，以及UI测试常用的 **Espresso** 等框架的使用。
 
 在这个项目中我们使用Room作为本地数据的缓存，使用Retrofit进行网络请求，又通过Repository模型完成了MVX三层架构中的M层构建。M层基本涵盖了全部的核心业务逻辑，也就是说我们的单元测试只要覆盖了M层即可。Room和Retrofit是Repository的基础，所以第一步是对DAO和ApiService进行单元测试。
 
