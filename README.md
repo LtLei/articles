@@ -16,6 +16,8 @@
 
 [Android上的单元测试与UI测试](/android/the_relearning_of_android/Android上的单元测试与UI测试.md)
 
+[从设计的角度谈Retrofit](/android/the_relearning_of_android/从设计的角度谈Retrofit.md)
+
 ## 《Android杂谈》
 
 [记一次Android逆向之旅（入门向）](./android/记一次Android逆向之旅（入门向）.md)
